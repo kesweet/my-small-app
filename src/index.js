@@ -1,17 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+//importing router for multiple urls
+//must run npm install react-router-dom first in CLI!!
+import {BrowserRouter} from "react-router-dom";
+//stylesheet
+import "./functionBased/App.css";
+//component file
+import TodoContainer from "./functionBased/components/TodoContainer";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+    <BrowserRouter>
+      <TodoContainer />
+    </BrowserRouter>
+  </React.StrictMode>, 
+document.getElementById("root"));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//the last line of code is rendering the react pages in conjunction 
+//with the html element that was identified as the root page for the app.
+//In this case, that is the div el inside the body el of index.html.
